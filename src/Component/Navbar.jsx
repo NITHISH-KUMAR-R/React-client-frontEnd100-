@@ -3,12 +3,12 @@ import React from 'react';
 import './navbar.css'; // Import custom CSS for styling
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { baseURL } from '../Url';
+
 
 const Navbar=() => {
     const handleLogout=async () => {
         try {
-            await axios.post( `${ baseURL }user/logout`, {
+            await axios.post( `https://project-nodejsbackend.onrender.com/api/user/logout`, {
                 withCredentials: true // Send cookies with the request
             } );
             localStorage.removeItem( 'user' ); // Remove user session data
