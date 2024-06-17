@@ -25,7 +25,7 @@ const Login=() => {
 
     const handleLogin=async () => {
         try {
-            const response=await axios.post( `${ baseURL }/user/login`, {
+            const response=await axios.post( `${ baseURL }/api/user/login`, {
                 email: formData.email,
                 password: formData.password
             } );
@@ -50,7 +50,7 @@ const Login=() => {
 
     const handleSignup=async () => {
         try {
-            const response=await axios.post( `${ baseURL }/reg/newUserReg`, {
+            const response=await axios.post( `${ baseURL }/api/reg/newUserReg`, {
                 name: formData.username,
                 email: formData.email,
                 password: formData.password

@@ -4,7 +4,7 @@ import Card from './Card';
 import './Timeline.css';
 import axios from 'axios';
 import Navbar from './Navbar';
-
+import { baseURL } from '../Url';
 axios.defaults.withCredentials=true;
 
 const Timeline=() => {
@@ -13,7 +13,7 @@ const Timeline=() => {
     useEffect( () => {
         const fetchPosts=async () => {
             try {
-                const response=await axios.get( `https://project-nodejsbackend.onrender.com/api/msg/allUserspost`, {
+                const response=await axios.get( `${ baseURL }/api/msg/allUserspost`, {
                     withCredentials: true
                 } );
                 setPosts( response.data );
